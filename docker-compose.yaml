@@ -1,0 +1,11 @@
+version: "3"
+services:
+  infra:
+    image: 155986540153.dkr.ecr.us-east-1.amazonaws.com/identity-infra:7.0
+    volumes:
+      - ./:/usr/local/src
+      - $HOME/.ssh:/root/.ssh
+      - $HOME/.aws:/root/.aws
+    environment:
+      TERRAGRUNT_DOWNLOAD: /tmp/terragrunt
+    command: /bin/bash
