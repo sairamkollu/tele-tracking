@@ -1,0 +1,8 @@
+---
+- name: Provisioning Web Servers
+  hosts: "{{ app }}"
+  become: true
+  vars_files:
+    - group_vars/web.yml
+  roles:
+    - { role: web-app }
